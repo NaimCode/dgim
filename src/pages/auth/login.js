@@ -97,7 +97,7 @@ const Page = () => {
                 color="text.secondary"
                 variant="body2"
               >
-                Vous n'avez pas de compte? Contacter le service informatique
+                {"Vous n'avez pas de compte? Contacter le service informatique"}
               </Typography>
             </Stack>
 
