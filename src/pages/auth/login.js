@@ -19,24 +19,31 @@ const Page = () => {
   const [method, setMethod] = useState('email');
   const formik = useFormik({
     initialValues: {
-      email: 'demo@devias.io',
-      password: 'Password123!',
+      email: '',//'demo@devias.io',
+      password: '',//'Password123!',
       submit: null
     },
     validationSchema: Yup.object({
       email: Yup
         .string()
-        .email('Must be a valid email')
         .max(255)
-        .required('Email is required'),
+        .required('L\'identifiant est requis'),
+
+
       password: Yup
         .string()
         .max(255)
-        .required('Password is required')
+        .required('Mot de passe est requis')
     }),
     onSubmit: async (values, helpers) => {
+      if (values.email != "daoud-381bbdk" || values.password != "d12345678") {
+        helpers.setStatus({ success: false });
+        helpers.setErrors({ submit: "Identifiant ou mot de passe incorrect" });
+        helpers.setSubmitting(false);
+        return;
+      }
       try {
-        await auth.signIn(values.email, values.password);
+        await auth.signIn("demo@devias.io", "Password123!");
         router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });
@@ -65,7 +72,7 @@ const Page = () => {
     <>
       <Head>
         <title>
-          Login | Devias Kit
+          DGIM | Connexion
         </title>
       </Head>
       <Box
