@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import {
   Button,
   Card,
@@ -8,10 +7,11 @@ import {
   Checkbox,
   Divider,
   FormControlLabel,
+  Unstable_Grid2 as Grid,
   Stack,
-  Typography,
-  Unstable_Grid2 as Grid
+  Typography
 } from '@mui/material';
+import { useCallback } from 'react';
 
 export const SettingsNotifications = () => {
   const handleSubmit = useCallback(
@@ -25,7 +25,7 @@ export const SettingsNotifications = () => {
     <form onSubmit={handleSubmit}>
       <Card>
         <CardHeader
-          subheader="Manage the notifications"
+          subheader="Gestion des notifications"
           title="Notifications"
         />
         <Divider />
@@ -55,11 +55,11 @@ export const SettingsNotifications = () => {
                   />
                   <FormControlLabel
                     control={<Checkbox />}
-                    label="Text Messages"
+                    label="Messages"
                   />
                   <FormControlLabel
                     control={<Checkbox defaultChecked />}
-                    label="Phone calls"
+                    label="Appels"
                   />
                 </Stack>
               </Stack>
@@ -85,7 +85,7 @@ export const SettingsNotifications = () => {
                   />
                   <FormControlLabel
                     control={<Checkbox defaultChecked />}
-                    label="Phone calls"
+                    label="Appels"
                   />
                 </Stack>
               </Stack>
@@ -95,7 +95,7 @@ export const SettingsNotifications = () => {
         <Divider />
         <CardActions sx={{ justifyContent: 'flex-end' }}>
           <Button variant="contained">
-            Save
+            Sauvegarder
           </Button>
         </CardActions>
       </Card>

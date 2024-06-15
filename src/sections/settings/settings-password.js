@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react';
 import {
   Button,
   Card,
@@ -9,6 +8,7 @@ import {
   Stack,
   TextField
 } from '@mui/material';
+import { useCallback, useState } from 'react';
 
 export const SettingsPassword = () => {
   const [values, setValues] = useState({
@@ -37,8 +37,8 @@ export const SettingsPassword = () => {
     <form onSubmit={handleSubmit}>
       <Card>
         <CardHeader
-          subheader="Update password"
-          title="Password"
+          subheader="Mettre à jour le mot de passe"
+          title="Mot de passe"
         />
         <Divider />
         <CardContent>
@@ -48,7 +48,7 @@ export const SettingsPassword = () => {
           >
             <TextField
               fullWidth
-              label="Password"
+              label="Mot de passe"
               name="password"
               onChange={handleChange}
               type="password"
@@ -56,7 +56,7 @@ export const SettingsPassword = () => {
             />
             <TextField
               fullWidth
-              label="Password (Confirm)"
+              label="Confirmer le mot de passe"
               name="confirm"
               onChange={handleChange}
               type="password"
@@ -67,7 +67,7 @@ export const SettingsPassword = () => {
         <Divider />
         <CardActions sx={{ justifyContent: 'flex-end' }}>
           <Button variant="contained">
-            Update
+            Mettre à jour
           </Button>
         </CardActions>
       </Card>

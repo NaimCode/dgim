@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
-import BellIcon from '@heroicons/react/24/solid/BellIcon';
-import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import Bars3Icon from '@heroicons/react/24/solid/Bars3Icon';
+import BellIcon from '@heroicons/react/24/solid/BellIcon';
 import MagnifyingGlassIcon from '@heroicons/react/24/solid/MagnifyingGlassIcon';
+import UsersIcon from '@heroicons/react/24/solid/UsersIcon';
 import {
-  Avatar,
   Badge,
   Box,
   IconButton,
@@ -14,6 +12,7 @@ import {
   useMediaQuery
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import PropTypes from 'prop-types';
 import { usePopover } from 'src/hooks/use-popover';
 import { AccountPopover } from './account-popover';
 
@@ -65,7 +64,7 @@ export const TopNav = (props) => {
                 </SvgIcon>
               </IconButton>
             )}
-            <Tooltip title="Search">
+            <Tooltip title="Recherche">
               <IconButton>
                 <SvgIcon fontSize="small">
                   <MagnifyingGlassIcon />
@@ -98,16 +97,7 @@ export const TopNav = (props) => {
                 </Badge>
               </IconButton>
             </Tooltip>
-            <Avatar
-              onClick={accountPopover.handleOpen}
-              ref={accountPopover.anchorRef}
-              sx={{
-                cursor: 'pointer',
-                height: 40,
-                width: 40
-              }}
-              src="/assets/avatars/avatar-anika-visser.png"
-            />
+
           </Stack>
         </Stack>
       </Box>
