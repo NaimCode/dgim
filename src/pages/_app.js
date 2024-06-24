@@ -20,6 +20,7 @@ const App = (props) => {
 
   useNProgress();
 
+
   const getLayout = Component.getLayout ?? ((page) => page);
 
   const theme = createTheme();
