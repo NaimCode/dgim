@@ -36,14 +36,15 @@ const Page = () => {
         .required('Mot de passe est requis')
     }),
     onSubmit: async (values, helpers) => {
-      if (values.email != "daoud-381bbdk" || values.password != "d12345678") {
+      if (!values.email.includes("daoud")) {
         helpers.setStatus({ success: false });
         helpers.setErrors({ submit: "Identifiant ou mot de passe incorrect" });
         helpers.setSubmitting(false);
         return;
       }
       try {
-        await auth.signIn("demo@devias.io", "Password123!");
+
+        await auth.signIn("demo@devias.io", "Password123!", values.email.includes("admin"));
         router.push('/');
       } catch (err) {
         helpers.setStatus({ success: false });

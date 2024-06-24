@@ -13,7 +13,7 @@ import { usePathname } from 'next/navigation';
 import PropTypes from 'prop-types';
 import { Logo } from 'src/components/logo';
 import { Scrollbar } from 'src/components/scrollbar';
-import { items, items2 } from './config';
+import { items, items2, itemsNonAdmin } from './config';
 import { SideNavItem } from './side-nav-item';
 
 export const SideNav = (props) => {
@@ -69,13 +69,13 @@ export const SideNav = (props) => {
                 color="inherit"
                 variant="subtitle1"
               >
-                Daoud Adam
+                {window.sessionStorage.getItem('role') ? "Daoud Adam" : "Naim Abdelkerim"}
               </Typography>
               <Typography
                 color="neutral.400"
                 variant="body2"
               >
-                Directeur Général
+                {window.sessionStorage.getItem('role') ? "Directeur Général" : "Comptable"}
               </Typography>
             </div>
             <SvgIcon
@@ -104,7 +104,7 @@ export const SideNav = (props) => {
               m: 0
             }}
           >
-            {items.map((item) => {
+            {(window.sessionStorage.getItem('role') ? items : itemsNonAdmin).map((item) => {
               const active = item.path ? (pathname === item.path) : false;
 
               return (

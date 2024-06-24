@@ -1,7 +1,7 @@
 import { Box, Unstable_Grid2 as Grid, Typography } from '@mui/material';
-import NextLink from 'next/link';
 import PropTypes from 'prop-types';
 import { Logo } from 'src/components/logo';
+import config from 'src/utils/config';
 
 // TODO: Change subtitle text
 
@@ -40,17 +40,7 @@ export const Layout = (props) => {
               width: '100%'
             }}
           >
-            <Box
-              component={NextLink}
-              href="/"
-              sx={{
-                display: 'inline-flex',
-                height: 32,
-                width: 32
-              }}
-            >
-              <Logo />
-            </Box>
+
           </Box>
           {children}
         </Grid>
@@ -75,20 +65,20 @@ export const Layout = (props) => {
               sx={{
                 fontSize: '24px',
                 lineHeight: '32px',
-                mb: 1
+                mb: 3,
+
               }}
               variant="h1"
             >
-              Bienvenue sur{' '}
-              <Box
-                component="a"
-                sx={{ color: '#15B79E' }}
-                target="_blank"
-              >
-                DGIM
-              </Box>
-            </Typography>
 
+
+              {config.name}
+
+
+
+
+            </Typography>
+            <Logo size={100} />
 
           </Box>
         </Grid>
