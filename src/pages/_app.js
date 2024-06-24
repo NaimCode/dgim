@@ -8,6 +8,7 @@ import 'simplebar-react/dist/simplebar.min.css';
 import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
 import { useNProgress } from 'src/hooks/use-nprogress';
 import { createTheme } from 'src/theme';
+import config from 'src/utils/config';
 import { createEmotionCache } from 'src/utils/create-emotion-cache';
 
 const clientSideEmotionCache = createEmotionCache();
@@ -27,7 +28,7 @@ const App = (props) => {
     <CacheProvider value={emotionCache}>
       <Head>
         <title>
-          DGIM
+          {config.name}
         </title>
         <meta
           name="viewport"
